@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Commerce Platform - GBASSI Jules-Christ</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="style_projet.css">
+</head>
+<body>
+
+  <!-- Navigation Desktop -->
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo">GBASSI</a>
+      <!-- <ul class="nav-links">
+        <li><a href="#home">Accueil</a></li>
+        <li><a href="#about">À Propos</a></li>
+        <li><a href="#skills">Compétences</a></li>
+        <li><a href="#projects">Projets</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul> -->
+      <a href="index.html#projects" class="back-button">← Retour</a>
+    </div>
+  </nav>
+
+  <!-- Navigation Mobile -->
+   <div class="mobile-nav d-lg-none d-md-none">
+    <a href="index.html"><span>🏠</span>Accueil</a>
+    <!--<a href="#about"><span>ℹ️</span>À Propos</a>
+    <a href="#skills"><span>💡</span>Compétences</a>
+    <a href="#projects"><span>📂</span>Projets</a>
+    <a href="#contact"><span>✉️</span>Contact</a> -->
+  </div>
+
+  <!-- Hero -->
+  <section class="project-hero" id="home">
+    <div>
+      <h1 class="project-title">ElectroJardin</h1>
+      <p class="project-subtitle">Plateforme e-commerce moderne et complète</p>
+      <div>
+        <span class="tech-tag">Bootstrap</span>
+        <span class="tech-tag">JS</span>
+        <span class="tech-tag">MySQL</span>
+        <span class="tech-tag">Laravel</span>
+        <span class="tech-tag">Stripe</span>
+      </div>
+      <div>
+        <a href="https://electrojardin.com/" class="cta-button">Visiter le site</a>
+        <a href="#features" class="cta-button">Voir les fonctionnalités</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <div class="project-overview">
+    <p class="project-description">
+      Electro Jardin est une boutique spécialisée dans les machines et outils pour l'entretien des espaces verts — tondeuses (y compris robots tondeuses), débroussailleuses, tronçonneuses et équipements professionnels. Le site propose des produits de marques reconnues, des fiches techniques détaillées, des promotions et un service client disponible pour la livraison et l'assistance. Basée à Strasbourg, l'équipe met l'accent sur la performance, la durabilité et des solutions adaptées aux besoins des particuliers et des professionnels.
+  </p>
+    </p>
+  </div>
+
+  <!-- Stats -->
+  <!-- <div class="project-stats">
+    <div class="stat-card"><div class="stat-number">6</div><div class="stat-label">Mois de dev</div></div>
+    <div class="stat-card"><div class="stat-number">15k+</div><div class="stat-label">Lignes de code</div></div>
+    <div class="stat-card"><div class="stat-number">98%</div><div class="stat-label">Performance</div></div>
+    <div class="stat-card"><div class="stat-number">24/7</div><div class="stat-label">Support</div></div>
+  </div> -->
+
+  <!-- Features -->
+  <section id="features">
+    <h2 class="section-title">Fonctionnalités</h2>
+    <div class="features-grid">
+      <div class="feature-card"><div class="feature-icon">💳</div><h4>Paiement</h4><p>Intégration Stripe sécurisée.</p></div>
+      <div class="feature-card"><div class="feature-icon">📊</div><h4>Inventaire</h4><p>Gestion en temps réel.</p></div>
+      <div class="feature-card"><div class="feature-icon">📱</div><h4>Responsive</h4><p>Optimisé mobile et PWA.</p></div>
+    </div>
+  </section>
+
+  <!-- Galerie simplifiée -->
+  <section class="gallery-container">
+    <h2 class="section-title">Galerie du Projet</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="images/electrojardin/Capture d'écran 2025-09-17 190416.png" alt="Accueil"></div>
+      <div class="gallery-item"><img src="images/electrojardin/Capture d'écran 2025-09-17 190548.png" alt="Gestion produits"></div>
+      <div class="gallery-item"><img src="images/electrojardin/Capture d'écran 2025-09-17 191807.png" alt="Dashboard"></div>
+      <div class="gallery-item"><img src="images/electrojardin/Capture d'écran 2025-09-17 195847.png" alt="Panier"></div>
+      <div class="gallery-item"><img src="images/electrojardin/Capture d'écran 2025-09-17 195919.png" alt="Caisse"></div>
+      <div class="gallery-item"><img src="images/electrojardin/Capture d'écran 2025-09-17 190448.png" alt="Article tendance"></div>
+
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="Agrandissement">
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 GBASSI Jules-Christ. Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    // Lightbox simple
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.querySelector(".lightbox-close");
+
+    document.querySelectorAll(".gallery-item img").forEach(img => {
+      img.addEventListener("click", () => {
+        lightbox.classList.add("show");
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+      });
+    });
+
+    closeBtn.addEventListener("click", () => {
+      lightbox.classList.remove("show");
+    });
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) lightbox.classList.remove("show");
+    });
+  </script>
+</body>
+</html>
