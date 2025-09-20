@@ -179,9 +179,11 @@
 
     /* Responsive */
     @media (max-width: 768px) {
-      nav { display: block; } /* cacher la navbar classique */
+      nav { display: block; } 
       .mobile-nav { display: flex; }
       body { padding-bottom: 70px;}
       .back-button{display: none;}
+      iframe{width:440px;}
+      
     }
   
