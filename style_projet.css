@@ -336,7 +336,7 @@ footer {
   .mobile-nav { display: flex; }
   body { padding-bottom: 70px;}
   .back-button{display: none;}
-  iframe{width:440px;}
+  iframe{width:300px;}
   
   .nav-container {
     padding: 0 1rem;
@@ -352,3 +352,4 @@ footer {
     font-size: 0.9rem;
   }
 }
+
