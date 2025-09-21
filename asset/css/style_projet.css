@@ -353,3 +353,44 @@ footer {
   }
 }
 
+/* Animation simple : trait lumineux qui tourne autour */
+.logo {
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.logo::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #FFD700, #FF6B35, #FFD700, #FF6B35);
+    border-radius: 8px;
+    z-index: -1;
+    animation: rotate 3s linear infinite;
+}
+
+.logo::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background: #000;
+    border-radius: 6px;
+    z-index: -1;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
