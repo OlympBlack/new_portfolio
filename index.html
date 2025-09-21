@@ -6,6 +6,7 @@
     <title>GBASSI Jules-Christ - Portfolio</title>
     <link rel="stylesheet" href="style_index.css">
     <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
@@ -31,6 +32,9 @@
                 <li><a href="#projects">Projets</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon" id="themeIcon"></i>
+            </button>
         </div>
     </nav>
 
@@ -154,15 +158,15 @@
                     <img src="images/dataAnanyser/Capture d'écran 2025-09-18 134853.png" alt="">
                 </div>
                 <div class="project-content">
-                    <h4>Data Analyser</h4>
-                    <p>Data Analyzer est une application puissante pour explorer, visualiser et analyser facilement vos données.</p>
+                    <h4>Data Analyzer</h4>
+                    <p>Data Analyzer est une application puissante pour explorer, visualiser et Analyzer facilement vos données.</p>
                     <div class="project-tech">
                         <span class="tech-tag">React</span>
                         <span class="tech-tag">JS</span>
                         <span class="tech-tag">CSS</span>
                     </div>
                     <div class="project-links">
-                        <a href="projet2_dataAnalyser.html" class="project-link">Voir les détails</a>
+                        <a href="projet2_dataAnalyzer.html" class="project-link">Voir les détails</a>
                     </div>
                 </div>
             </div>
@@ -193,7 +197,7 @@
                 </div>
                 <div class="project-content">
                     <h4>Artisan circuit (Maquette)</h4>
-                    <p>Artisan Circuit – Maquette d’une Marketplace pour Artisans Locaux</p>
+                    <p>Artisan Circuit – Maquette d'une Marketplace pour Artisans Locaux</p>
                     <div class="project-tech">
                         <span class="tech-tag">Figma</span>
                     </div>
@@ -228,7 +232,7 @@
                 </div>
                 <div class="project-content">
                     <h4>MonDevise</h4>
-                    <p>MonDevise est une application web simple et rapide qui permet de convertir facilement le FCFA en Euro, Dollar et d’autres devises, et inversement.</p>
+                    <p>MonDevise est une application web simple et rapide qui permet de convertir facilement le FCFA en Euro, Dollar et d'autres devises, et inversement.</p>
                     <div class="project-tech">
                         <span class="tech-tag">JS Native</span>
                         <span class="tech-tag">Bootstrap</span>
@@ -334,6 +338,34 @@
     <script src="script_mail.js"></script>
     <script src="script_typed.js"></script>
 
+    <script>
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const body = document.body;
+
+        // Check for saved theme preference or default to dark theme
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        body.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+
+        function updateThemeIcon(theme) {
+            if (theme === 'dark') {
+                themeIcon.className = 'fas fa-sun';
+            } else {
+                themeIcon.className = 'fas fa-moon';
+            }
+        }
+    </script>
 
 </body>
 </html>

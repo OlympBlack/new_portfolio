@@ -7,6 +7,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="stylesheet" href="style_projet.css">
     <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 
 </head>
 <body>
@@ -22,7 +24,12 @@
         <li><a href="#projects">Projets</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul> -->
-      <a href="index.html#projects" class="back-button">← Retour</a>
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeToggle">
+          <i class="fas fa-moon" id="themeIcon"></i>
+        </button>
+        <a href="index.html#projects" class="back-button">← Retour</a>
+      </div>
     </div>
   </nav>
 
@@ -117,5 +124,7 @@
   </footer>
 
  <script src="script_project.js"></script>
+<script src="script_darkmoe.js"></script>
+
 </body>
 </html>
